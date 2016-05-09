@@ -1,0 +1,93 @@
+/* =============================================================================
+   menu
+   ========================================================================== */ 
+
+
+   
+#main-menu {z-index:10;position:absolute;top:0;left:0;bottom:0;right:0;background-color:#242424;width:100%;height:100%;max-width:27em;@include transitionMenu;-webkit-transform: translate3d(-100%, 0, 0);transform: translate3d(-100%, 0, 0);
+  ul {list-style-type:none;padding:0;margin:0;text-align:left;
+    li {padding:0;list-style-type:none;border-bottom:1px solid #4e4646;background:#323232;margin-bottom:0;
+        a {display:block;width:100%;padding:2em;color:#b09b71;@include didot;font-size:1em;text-transform:uppercase;letter-spacing:0.25em;line-height:2em;position:relative;
+          &:hover {background-color:#242424;}          
+        }
+       ul {
+         li {border-bottom:none;color:#fff;@include sweetSansRegular;font-size:0.833em;text-transform:uppercase;
+           &:first-of-type {
+              h4 {}
+           }
+           &:last-of-type {
+              ul {border-bottom:none;}
+           }
+           
+           h4 {padding:3em 3em 0 3em;color:#fff;@include sweetSansRegular;font-size:0.833em;text-transform:uppercase;margin:0;}
+           ul {padding:0;border-bottom:1px solid #4e4646;padding:1em 3em 2em 3em;display:block;
+             li {padding:0.5em 0;
+               a {padding:0;color:#a8a8a8;@include sweetSansRegular;font-size:0.833em;text-transform:uppercase;
+                  &:hover {background-color:transparent;color:#9f895d;}
+               }
+             }
+           }
+         }
+         &.two {max-height:0px;overflow:hidden;@include transitionMaxHeight;}
+       }
+       a.arrow {
+         &:after {@include transitionArrow;@include setTransformOrigin(center center);content:" ";background:url('../img/arrow.svg');width:1.667em;height:0.917em;background-size:100% 100%;position:absolute;top:50%;right:2em;margin-top:-0.45em;}  
+        &:hover, &.active {
+          &:after {@include boxRotate(180deg);}
+        }
+       }
+    }
+    &.one {
+      .open {
+        .two {max-height:3000px;height:auto;}
+      }
+    }
+  }
+  a {text-decoration:none;}
+}
+
+/* =============================================================================
+   Slide effect
+   ========================================================================== */
+
+.container {
+  .pusher { position: relative; left: 0; z-index: 1; height: 100%;@include transitionMenu;
+    &:after {@include transitionMenu; z-index:20;position: fixed; top: 0; right: 0; width: 0; height: 0; background: rgba(0,0,0,0); content: ''; opacity: 0; -webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s; transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;-moz-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s; }
+  }
+}
+
+.menu-open {
+  .pusher {
+    &:after { width: 100%; height: 100%; opacity: 1; -webkit-transition: opacity 0s; transition: opacity 0s;-moz-transition: opacity 0s;background:rgba(50,50,50,0.8);}
+  }
+  .menu {
+    &:after { width: 0; height: 0; opacity: 0; -webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s; transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;-moz-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;}
+  }
+  #main-menu {visibility: visible; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0);-moz-transform: translate3d(0, 0, 0);}
+  .hamburger { left: 28em;
+    span { background-color: rgba(0, 0, 0, 0); @include transitionDelay(.2s);
+      &:before { margin-top: 0;
+        -webkit-transform: rotate(45deg); -webkit-transition-delay: 0s, .2s;
+        -moz-transform: rotate(45deg); -moz-transition-delay: 0s, .2s;
+        transform: rotate(45deg); transition-delay: 0s, .2s;
+      }
+      &:after { margin-top: 0;
+        -webkit-transform: rotate(-45deg); -webkit-transition-delay: 0s, .2s;
+        -moz-transform: rotate(-45deg); -moz-transition-delay: 0s, .2s;
+        transform: rotate(-45deg); transition-delay: 0s, .2s;
+      }
+    }
+  }
+  
+}
+
+
+/* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
+.no-csstransforms3d .pusher,
+.no-js .pusher {
+	padding-left: 27em;
+}
+
+
+
+   

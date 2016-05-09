@@ -1,0 +1,244 @@
+
+@import "variables.less";
+@import "elements.less";
+
+
+/*
+Author: ChrisHowell
+*/
+.nav-breadcrumb {
+  a {
+    margin: 16px !important;
+    }
+}
+.navbar-default {
+  padding: 0px !important;
+}
+
+.strong {
+  font-weight: bold;
+}
+.table-text {
+  white-space: nowrap;
+}
+.fl-r {
+  float: right;
+}
+.custom-well{
+  width: 40%;
+  padding: 20px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  background-color: @white;
+  border: 1px solid @sldlight;
+}
+.custom-modal-title {
+    padding: 35px 25px 15px 25px;
+    line-height: 22px;
+    font-size: 18px;
+    background-color: white;
+    color: @slddark;
+    text-align: left;
+    margin: 0px;
+}
+.avatar-dropdown-toggle {
+  background-image: url('../images/users/avatar-1.jpg');
+  background-size: cover;
+  height: 35px;
+  width: 35px;
+  border: 1px solid @slddark;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-right: 80px;
+  margin-left: 40px;
+}
+
+.sunland-logo {
+    background-image: url('../images/sunland.svg');
+    background-repeat: no-repeat;
+    background-fit: cover;
+    height: 30px;
+    width: 170px;
+    margin-top: 0px;
+    border-right: 1px solid #E7E7EC;
+    padding-right: 200px;
+    margin-left: 30px;
+}
+
+
+.user-list {
+  .user-list-item {
+
+    .avatar {
+      float: left;
+      margin-right: 5px;
+      width: 30px;
+      height: 30px;
+
+      img {
+        border-radius: 50%;
+        width: @width;
+      }
+    }
+
+    .icon {
+      float: left;
+      margin-right: 5px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      text-align: center;
+
+      i {
+        color: @white;
+        line-height: 30px;
+        font-size: 16px;
+      }
+    }
+
+    .dropdown-user-desc {
+      margin-left: 0px !important;
+
+      span.name {
+        color: @dark;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+      }
+
+
+      span.desc {
+        color: @muted;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        font-size: 12px;
+      }
+      span.time {
+        font-size: 11px;
+        color: @custom;
+        font-style: italic;
+      }
+    }
+  }
+}
+.profile-dropdown-menu {
+  margin-right: 80px;
+}
+.profile-dropdown-menu:before {
+  position: absolute;
+  top: -17px;
+  left: 110px;
+  display: inline-block;
+  border-right: 17px solid transparent;
+  border-bottom: 17px solid #ccc;
+  border-left: 17px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.profile-dropdown-menu:after {
+  position: absolute;
+  top: -16px;
+  left: 111px;
+  display: inline-block;
+  border-right: 16px solid transparent;
+  border-bottom: 16px solid #ffffff;
+  border-left: 16px solid transparent;
+  content: '';
+}
+
+.list-inline {
+  display: inline-block;
+  padding-left: 35px;
+  padding-right: 5px;
+}
+
+.list-inline>li {
+  padding-left: 15px;
+}
+
+.icon-search {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    padding-left: 6px;
+    line-height: 2.3;
+  }
+
+  .filter {
+    width: calc(100% - 46px);
+    float: left;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 0 10px;
+    line-height: 3.9;
+  }
+
+.m-t-40 {
+  margin-top: 40px;
+}
+.p-l-minus15 {
+  padding-left: 0px !important;
+}
+
+.card-box-inactive {
+  background-color: #f9f9f9;
+  box-shadow: 0 0px 0px 0 rgba(0,0,0,0.06),0 1px 0px 0 rgba(0,0,0,0.02);
+  padding-left: -15px;
+  display: inline-block;
+}
+
+.card-box-inline {
+  margin-left: 2px;
+  max-width: 98%;
+}
+
+// RESPONSIVE
+  @media only screen and (max-width: 6000px) and (min-width: 700px) {
+    .content-page-nomenu {
+      overflow: hidden;
+      margin-left: 160px;
+      margin-right: 160px;
+      margin-bottom: 100px;
+    }
+  }
+  @media (max-width: 1023px) {
+    .content-page-nomenu {
+      overflow: hidden;
+      margin-left: 160px;
+      margin-right: 160px;
+      margin-bottom: 100px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .content-page-nomenu {
+      overflow: hidden;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 00px;
+    }
+  }
+  @media (max-width: 767px) {
+    .content-page-nomenu {
+      overflow: hidden;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+    }
+  }
+    @media (max-width: 320px) {
+      .content-page-nomenu {
+        overflow: hidden;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 10px;
+      }
+      .list-inline {
+        padding-left: 0px;
+      }
+  }

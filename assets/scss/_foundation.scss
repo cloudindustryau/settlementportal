@@ -1,0 +1,84 @@
+/* =============================================================================
+   foundation
+   ========================================================================== */
+
+.foundation-intro {margin:20em 0;
+    p {@include didot;font-size:1em;text-align:center;max-width:53em;display:block;margin:0 auto;letter-spacing:0.083em;}
+}
+
+.foundation-diagram {margin:0 0 20em 0;
+    h2 {font-size:1.5em;text-align:center;}
+    .triangle {background:url('../img/prism.svg') no-repeat 0 0;width:15em;height:13em;display:block;margin:5em auto 0 auto;position:relative;
+      .edu, .hea, .res {text-transform:uppercase;margin:0;}
+      .edu {position:absolute;top:-3em;text-align:center;width:100%;}
+      .hea {position:absolute;bottom:-3em;right:0;text-align:right;@include translate(50%, 0%);}
+      .res {position:absolute;bottom:-3em;left:0;text-align:left;@include translate(-50%, 0%);}
+    }
+}
+
+.foundation-quote {margin:0 0 20em 0;
+    p {font-size:0.833em;text-align:center;max-width:53em;display:block;margin:0 auto 2em;text-transform:uppercase;letter-spacing:0.083em;}
+    h2 {font-size:3.250em;text-transform:none;text-align:center;max-width:53em;display:block;margin:0 auto;line-height:1.5;@include sweetSansHair;color:#9a989a;}
+}
+
+.foundation-content {
+    h2 {font-size:1.5em;text-align:center;margin-bottom:5em;}
+}
+
+// Modal trigger
+.three-images {
+  &.modal {
+      figure {position:relative;
+        .md-trigger {width:100%;height:100%;display:block;cursor:pointer;
+          figcaption {background: transparent;display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;border:0px solid #fff;@include transitionFast;
+            .caption-wrap {position:absolute;top:50%;left:50%;@include translate(-50%, -50%);opacity:0;@include transitionSliderFade;
+              p {color:#fff;font-size:1em;font-size:7px;margin:0;text-transform:uppercase;letter-spacing:0.083em;}
+              h3 {color:#fff;text-transform:uppercase;font-size:1em;font-size:10px;margin:0;text-transform:uppercase;letter-spacing:0.083em;}
+            }
+          }
+          &:hover {
+            .caption-wrap {opacity:1;@include transitionDelay(400ms);}
+            figcaption {background: rgba(50,50,50,0.5);border:12px solid #fff;}
+          }
+        }
+      }
+  }
+}
+
+// Modal
+
+.md-modal {background:#fff;position: fixed; top: 0%; left: 0%; width: 50%; height: auto; z-index: 2000; visibility: hidden;
+  .md-content {max-width: 61.250em; min-width: 30em; @include translate(-50%, -55%);position: fixed; top: 50%; left: 50%;padding:0;
+    p {font-size:1.083em;
+      &:last-of-type {margin-bottom:0;}
+      small {color:#4d4645;}
+    }
+    h3 {margin-top:0;}
+    div {padding:3.333em;margin-bottom:5em;}
+    .md-close {width:100%;height:48px;display:block;background:#323232 url('../img/close.svg') center center no-repeat;text-indent:-999em;position:absolute;bottom:-1px;left:0;}
+  
+  }
+}
+ 
+.md-show { visibility: visible; }
+
+.md-overlay { position: fixed; width: 100%; height: 100%; visibility: hidden; top: 0; left: 0; z-index: 1000; opacity: 0; background: rgba(50,50,50,0.8); transition: all 0.800ms; }
+
+.md-show ~ .md-overlay { opacity: 1; visibility: visible;}
+
+/* Effect 16:  Blur */
+
+.md-show.md-effect-16 ~ .md-overlay { background: rgba(50,50,50,0.5); }
+
+.md-show.md-effect-16 ~ #content { -webkit-filter: blur(3px); -moz-filter: blur(3px); filter: blur(3px); }
+
+.md-effect-16 .md-content {-webkit-filter: none; -moz-filter: none; filter: none;background:#fff;  opacity: 0; }
+
+.md-show.md-effect-16 ~ #content { @include transitionModal;}
+.md-effect-16 .md-content { @include transitionModal;}
+
+.md-show.md-effect-16 {
+  .md-content { opacity: 1;@include translate(-50%, -50%)
+
+  }
+}

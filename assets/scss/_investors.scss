@@ -1,0 +1,53 @@
+/* =============================================================================
+   investors
+   ========================================================================== */
+
+.investors-page {
+  p {text-align:center;
+    &.intro {margin-bottom:1.2em;}
+  }
+  #tabs {margin:7em 0 0 0;}
+  table {margin-top:0;}
+  .wrap {max-width:79.000em;}
+  footer {max-width:79.000em}
+}
+
+.share-price {border:18px solid #fff;padding:3em;margin:8em 0 7em 0;
+  h2 {text-transform:uppercase;color:$headingColor;font-size:0.833em;letter-spacing:0.083em;line-height:1;text-align:center;margin:0 0 1em 0;}
+  h3 {@include didot;text-transform:uppercase;color:$headingColor;font-size:2.417em;letter-spacing:0.167em;line-height:1;text-align:center;margin:0;}
+  h4 {text-transform:uppercase;color:$headingColor;font-size:1.083em;letter-spacing:0.083em;text-align:center;line-height:1;margin:1em 0 0 0;}
+  ul {list-style-type:none;margin:3em auto 0 auto;padding:0;@include flexJustify;text-transform:uppercase;max-width:20.833em;line-height:1;
+    li {margin:0;padding:0;display:inline-block;vertical-align:top;font-size:1.083em;line-height:1.25em;
+      strong {@include sweetSansRegular;font-weight:normal;font-size:0.833em;}
+    }
+  }
+  p {font-size:0.667em;margin:0;text-transform:uppercase;}
+}
+
+// Switcher
+
+.tabs {
+  [data-content] {display:none;position:relative;
+    &.active {display:inherit;}
+  }
+}
+
+.switcher {padding:0 2em;border-bottom:1px solid #333;width:100%;text-align:left;margin:0 0 2em 0;@include sweetSansLight;
+  a {text-decoration:none;display:inline-block;vertical-align:top;letter-spacing:0.083em;font-size:0.833em;text-transform:uppercase;margin-right:3em;position:relative;color:#9a989a;
+    &.active {color:#4d4645;
+      &:after {margin-top:2px;@include translate(-50%, 0);position:absolute;top:101%;left:50%;content:" ";width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 8px solid #333; font-size: 0; line-height: 0;}
+      &:before {margin-top:2px;@include translate(-50%, 0);position:absolute;top:101%;left:50%;content:" ";width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 7px solid #fff; font-size: 0; line-height: 0;z-index:5;}
+      &:before, &:after {}
+    }
+    &:hover {color:#4d4645;}
+  }
+}
+
+// Tabs
+
+.tabs {
+  &.investors {
+    &[style] {margin-top:8em !important;}
+    .resp-tabs-list li {width:19.5%;}
+  }
+}

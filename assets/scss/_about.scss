@@ -1,0 +1,39 @@
+/* =============================================================================
+   about
+   ========================================================================== */
+
+.video-wrap {border:18px solid #fff; position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0;
+  iframe {width:100%;position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+}
+
+.about-page {
+  p {text-align:center;margin-top:1.7em;padding-top:0.8em;}
+  blockquote p {margin-top:0;padding-top:0;}
+  h1 {margin-top:0;}
+  .archives-nav {margin:11em 0 12em 0;border:18px solid #fff;padding:3em 0 8em 0;
+        h1 {margin:0 0 5em 0;}
+        .read-more {margin:0 auto;display:none;position:static;@include translate(0, 0);}
+    .timeline {@include flexJustify;margin:0em 2em -1em 2em;position:relative;
+        h5 {margin:0;padding:0;font-size:0.417em;line-height:1;text-align:center;position:relative;@include transitionFast;color:#4d4645;@include backface-visibility(hidden);}
+        p {@include glosaDisplay;font-size:1.375em;line-height:1;padding:2.5em 0 0 0;margin:1.5em 0 0 0;position:relative;color:transparent;@include backface-visibility(hidden);@include transitionFast;@include translate(0%, -30%);}
+        span {@include backface-visibility(hidden);@include transitionFast;content:"";display:block;width:7px;height:7px;background:#fff;border-radius:50%;border:1px solid #9a989a;position:absolute;top:43%;left:50%;@include translate(-50%, 0%);}                  
+        .chapter {display:inline-block;@include backface-visibility(hidden);}
+        a {text-decoration:none;position:relative;display:inline-block;
+          &:hover {
+            h5 {@include translate(0%, -50%);}
+            p {color:#4d4645;@include translate(0%, 0);}
+            span {
+              background-color:#9a989a;
+            }
+          }
+        }
+        .line {position:absolute;top:40%;left:0;width:100%;height:1px;display:block;font-size:0;line-height:0;background:#9a989a;}
+    }
+  }
+}
+
+
+
+.images {
+  blockquote p {font-size:0.833em;}
+}

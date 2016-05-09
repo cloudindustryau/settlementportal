@@ -1,0 +1,96 @@
+/* =============================================================================
+   typography 
+   ========================================================================== */
+
+// Setup
+   
+@include font-face("DidotItalic", font-files("didot-italic.eot", "didot-italic.woff", "didot-italic.ttf", "didot-italic.svg#DidotItalic"));
+@include font-face("FontAwesome", font-files("fontawesome-webfont.eot", "fontawesome-webfont.woff", "fontawesome-webfont.ttf", "fontawesome-webfont.svg#FontAwesome"));
+@include font-face("GlosaDisplay", font-files("glosa-display.eot", "glosa-display.woff", "glosa-display.ttf", "glosa-display.svg#GlosaDisplay"));
+
+
+// Font Mixins
+
+@mixin didot {
+   font-family:'DidotItalic', sans-serif; font-weight:normal;font-style:normal;-webkit-font-smoothing:antialiased;
+}
+
+@mixin sweetSansRegular {
+   font-family: 'Sweet Sans', arial, sans-serif; font-weight:normal;font-style:normal;-webkit-font-smoothing:antialiased;
+}
+
+@mixin sweetSansLight {
+   font-family: 'Sweet Sans Light', arial, sans-serif; font-weight:normal;font-style:normal;-webkit-font-smoothing:antialiased;
+   
+   //@media (min-width: 568px) {
+   //  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { @include sweetSansHair;}
+   //}
+}
+
+@mixin sweetSansLightNoRetina {
+   font-family: 'Sweet Sans Light', arial, sans-serif; font-weight:normal;font-style:normal;-webkit-font-smoothing:antialiased;
+}
+
+@mixin sweetSansHair{
+   font-family: 'Sweet Sans Hairline', arial, sans-serif; font-weight:normal;font-style:normal;-webkit-font-smoothing:antialiased;
+}
+
+@mixin fontAwesome{
+   font-family: 'FontAwesome', arial, sans-serif; font-weight:normal;font-style:normal;-webkit-font-smoothing:antialiased;
+}
+
+@mixin glosaDisplay{
+   font-family: 'GlosaDisplay', arial, sans-serif; font-weight:normal;font-style:normal;-webkit-font-smoothing:antialiased;
+}
+
+html, body {@include type;}
+body {font-size:75%;@include sweetSansLight;color:$bodyColor;-webkit-font-smoothing:subpixel-antialiased;}
+p {font-size:1em;line-height:2em;margin:0 0 1em 0;
+  &.intro {color:$introColor;text-transform:uppercase;letter-spacing:0.167em;margin:2em 0;
+    &.dark {color:#4d4645;}
+  }
+  small {font-size:0.667em;color:$smallColor;}
+  strong {@include sweetSansLightNoRetina;}
+  &.address {text-transform:uppercase;}
+}
+
+h1 {@include didot;text-transform:uppercase;color:$headingColor;font-size:1.583em;letter-spacing:0.167em;line-height:1;padding-top:0.417em;text-align:center;margin:0 1em 2em;}
+h2 {@include sweetSansLightNoRetina;text-transform:uppercase;color:$headingColor;font-size:1.667em;letter-spacing:0.083em;line-height:2em;}
+h3 {@include sweetSansLightNoRetina;text-transform:uppercase;color:$headingColor;font-size:1.500em;letter-spacing:0.083em;line-height:2em;margin:2em 0;}
+h4 {@include sweetSansLightNoRetina;text-transform:uppercase;color:$headingColor;font-size:1.250em;letter-spacing:0.083em;line-height:2em;}
+h5 {@include sweetSansLightNoRetina;text-transform:uppercase;color:$headingColor;font-size:1.083em;letter-spacing:0.083em;line-height:2em;}
+h6 {@include sweetSansLightNoRetina;text-transform:uppercase;color:$headingColor;font-size:0.833em;letter-spacing:0.083em;line-height:2em;margin:2em 0 0em 0;}
+
+ul, ol {font-size:1em;line-height:2em;padding:0 0 0 1em;margin:0 0 2em;
+  li {margin-bottom:0.5em;padding:0 0 0 3em;}
+  &.abc {counter-reset: my-counter;list-style-type:none;padding:0;
+    li {padding:0 0 0 4em;position:relative;
+      &:before { content: "(" counter(my-counter, lower-alpha) ")"; counter-increment: my-counter;position:absolute;left:0;}
+    }
+  }
+}
+ul {list-style-type: disc;
+  li {
+    ul {margin:1em 0 1em 0.5em;list-style-type: circle;
+      li {padding:0 0 0 0.25em;}
+    }
+  }
+}
+table {font-size:1.083em;
+  th {font-size:0.833em;}
+}
+.more {@include sweetSansRegular;}
+input[type=text], input[type=email],select {@include sweetSansLight;font-size:0.833em;letter-spacing:0.083em;text-align:center;color:#4d4645;}
+legend, .legend {@include didot;text-transform:uppercase;color:$headingColor;font-size:1.583em;letter-spacing:0.167em;line-height:2em;text-align:center;}
+
+blockquote {margin:2em 0 0 0;text-align:center;
+  p {margin:0;text-transform:uppercase;font-size:0.833em;line-height:3em;letter-spacing:0.083em;color:#4d4645;padding-top:0.5em;}
+  cite {font-weight:normal;font-style:normal;margin-top:1em;text-transform:uppercase;font-size:0.833em;display:block;color:#4d4645;letter-spacing:0.083em;}
+}
+
+// Change p and submit to light for retina
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+    p {@include sweetSansLightNoRetina;}
+    input[type=submit], .read-more, .more, .fancy-submit, .filter-done {@include sweetSansLightNoRetina;}
+}

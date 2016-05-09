@@ -1,0 +1,92 @@
+/* =============================================================================
+   forms 
+   ========================================================================== */
+
+// forms
+
+//[placeholder]:focus::-webkit-input-placeholder {
+//  opacity: 0;
+//}
+
+form {margin:8em 0;border:18px solid #fff;
+  fieldset {margin:0 0 0.5em 0;padding:0;border:none;
+    input[type=text], input[type=email], input[type=phone] {@include sweetSansLight;@include transitionForms;text-transform:uppercase;color:#4d4645;border-radius:4px;border:2px solid #fff;width:100%;padding:1em 2em;outline:none;background:transparent;@include placeholder(#9b989b);-webkit-appearance:none;
+      &:focus {background:#333;color:#9b989b;}
+      &.error {border-color:#333;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAM3b93+z4gsBhJQV1NlhAvCBECKwILIAmBBdAGQIADtjBOTO6EawgAAAABJRU5ErkJggg==') top left;
+        &:focus {background:#333;}
+      }
+    }
+    input[type=hidden] {display:none;}
+    select {@include sweetSansLight;color:#9b989b;text-indent: 0.01em;text-overflow: '';@include transitionForms;text-align:center;border-radius:4px;border:2px solid #fff;width:100%;padding:1em 2em;outline:none;background:transparent;@include placeholder(#9b989b);@include appearance('none');text-transform:uppercase;
+      &:focus {background:#333;color:#9b989b;}
+      &:-ms-expand {display: none;}
+    }
+    select::-ms-expand {
+        display: none;
+    }
+    textarea {@include sweetSansLight;-webkit-appearance:none;@include transitionForms;text-transform:uppercase;color:#4d4645;@include placeholderCenter;font-size:0.833em;border-radius:4px;border:2px solid #fff;width:100%;padding:1em 2em;outline:none;background:transparent;@include placeholder(#9b989b);
+      &:focus {background:#333;color:#9b989b;}
+      &.error {border-color:#333;}
+    }
+    
+    .select {position:relative;
+      &:after {@include translate(0, -50%);position:absolute;top:50%;right:1em;font-size:1.167em;line-height:1;color:#4d4645;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: FontAwesome;content:"\f0dc";}
+      option {}
+    }
+    label.error {@include sweetSansLight;text-transform:uppercase;font-size:0.833em;padding-left:2em;margin:1em 0 1em;display:inline-block;@include transitionForms;}
+    
+    input[type=submit] {font-size:0.750em;width:auto;border:1px solid #c9c9c9;background:transparent;border-radius:2px;color:#9a989a;padding:1em 3em;text-align:center;@include appearance('none');text-transform:uppercase;
+      &:focus {outline:0;}
+    }
+    
+    input[type=checkbox] { display:none; } 
+    input[type=checkbox] + label:before { font-family: FontAwesome; display: inline-block; content: "\f096"; font-size:1.5em;letter-spacing:0.083em;vertical-align:middle;width:1.5em;}
+    input[type=checkbox]:checked + label:before { content: "\f046"; letter-spacing:0.083em;} /* checked icon */
+    
+    &.checkbox {margin:2em 0;
+      label {@include sweetSansLight;text-transform:uppercase;font-size:0.750em;display:inline-block;vertical-align:middle;text-align:left;}
+    }
+  }
+  legend, .legend {text-align:center;width:100%;margin:1.5em 0 1em 0;}
+  h1 {font-size:1em;}
+}
+
+// Enquiry Form
+
+form {
+  &#enquiry {@include flexJustify;padding:0 5em 1em 5em;border:18px solid #fff;margin:8em auto;
+    fieldset {width:48%;display:inline-block;vertical-align:top;
+      &.full {width:100%;text-align:center;}
+    }
+    .form-reveal {max-height:0px;overflow:hidden;@include transitionMaxHeight;display:inline-block;
+      &.open {max-height:1000px;}
+    }
+  }
+}
+
+// Subscribe Form
+
+form {
+  &.subscribe {@include flexJustify;padding:0 5em 1em 5em;width:100%;margin:8em auto;border:18px solid #fff;margin:8em auto;
+    .form-wrap {max-width:29.583em;margin:0 auto;}
+    fieldset {width:48%;display:inline-block;vertical-align:top;margin:0 0 1em;
+      &.full {width:100%;text-align:center;
+        label {padding-left:0;width:100%;}
+      }
+      input[type=email] {max-width:22.083em;margin-bottom:1em;}
+      input[type=submit] {margin-top:1em;}
+    }
+  }
+}
+
+// Subscribe Form
+
+form {border:none;margin:2em 0 0em;
+  &.contact {@include flexJustify;background:#f8f8f8;padding:4em 5em 1em 5em;
+    fieldset {width:48%;display:inline-block;vertical-align:top;
+      &.full {width:100%;text-align:center;}
+    }
+  }
+}
+
+

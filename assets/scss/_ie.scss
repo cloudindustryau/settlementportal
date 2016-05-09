@@ -1,0 +1,267 @@
+/* =============================================================================
+   Internet Explorer 9
+   ========================================================================== */
+
+.ie9 {
+  * {outline:none;}
+
+  //News-filter
+  
+  #news-filter {right:-100%;
+    &.open {right:0;}
+  }
+  
+  // Menu
+  #main-menu {left:-100%;}
+  .menu-open {
+      #main-menu {left:0;}
+      header .hamburger span:before {-ms-transform: rotate(45deg);}
+      header .hamburger span:after {-ms-transform: rotate(-45deg);}
+  }
+  .pusher {padding-left:0;}
+  
+  // Slider 
+  
+  .slider {height:386px;}
+  
+  // Slider Arrows 
+  .teasers {
+    .slider-arrows {
+        .slider-arrow {-ms-transform: rotate(0deg);
+        	&.slider-arrow--right {background-image: url("../img/arrow-side-right.svg");}
+        }
+    }
+  } 
+  // Logo
+  
+  header {
+    .logo {background: transparent url("../img/bitmaps/sunland.png") no-repeat top left;height:8em;width:17.5em;}
+  }
+  
+  // Switcher
+  
+  .switcher {
+    a {
+      &.active {
+        &:before, &:after {margin-top:3px}
+      }
+    }
+  }
+  .ie-image {display:block;}
+  
+  // About
+   .archives-nav .timeline h5 {font-size:0.8em;}
+  
+   form {
+     &#enquiry {
+        .select {
+          select {padding-right:1em;}
+          &:after {font-size:0px !important;visibility:hidden;}
+        }
+     }
+   }
+   select {
+     option {color:#9b989b}
+   }
+   
+}
+
+/* =============================================================================
+   Internet Explorer 8
+   ========================================================================== */
+
+.ie8 {
+  
+  // Pictures
+  .slider .slides .slide picture {display:none;}
+  
+  .slider .slides .slide .ie-image {display:block;}
+  
+  .ie-image {display:block;}
+  // Auto widths
+  footer, .slider {width:auto;}
+  
+  // Wrap  
+  .wrap {width:61.667em;}
+  
+  // Turn off fancy footer
+  #content { margin-bottom:0;}
+  footer {max-width:none;position:static;height:auto;}
+  
+  // Hmepage
+  .teasers-wrap .slides .slide {text-justify:auto;text-align:left;width:33%;
+    figure {width:33%;}
+  }
+  .slider {height:366px;}
+  
+  // Opacity
+  .cbp-qtrotator .cbp-qtcontent.cbp-qtcurrent {display:block;}
+  .cbp-qtrotator .cbp-qtcontent {display:none;}
+  
+  // No translate support 
+  .teasers .slider-arrows {margin-top:-45px;}
+  
+  // Hide things 
+  .slider .slides .slide figcaption, .preloader {display:none;}
+  
+  // Menu
+  #main-menu {width:27em;max-width:none;overflow:hidden;}
+  .container .pusher {z-index:2;}
+  // News filter
+  #news-filter {width:27em;max-width:none;overflow:hidden;}
+  #news-filter ul.filter li a {width:auto;}
+  .tabs#trans-tabs .filter {font-size:1em;
+    &:after {background:url('../img/bitmaps/filter.png') no-repeat center bottom;}
+  }
+  
+  // Hamburger
+  header .hamburger {background:url('../img/bitmaps/menu.png') no-repeat top left;
+    span {display:none;}
+  }
+  .menu-open header .hamburger {background:url('../img/bitmaps/cross.png') no-repeat top left;z-index:-2;
+    span {display:none;}
+  }
+  .menu-open .pusher {z-index:5;}
+    
+  
+  // Buttons
+  .read-more {margin-bottom:0;height: 3.2em;width:94px;padding-top:0;
+      &:before, &:after {display:none;}
+      b {position:static;
+        &:before, &:after {display:none;}
+      }
+  }
+  .fancy-submit {height: 3.2em;width:94px;padding-top:0;
+      &:before, &:after {display:none;}
+      b {position:static;
+        &:before, &:after {display:none;}
+      }
+    }
+  // Subsribe
+  form.subscribe {
+    width:auto;max-width:100%;
+  }
+  
+  // Slider
+  .slider .slider-nav .slider-nav__item {width:8px;height:8px;display:block;background-color:transparent;
+    &:hover { background-color: #fff; }
+    &.slider-nav__item--current { background-color: #fff; }
+  }
+  
+  //Enquiry
+  form {
+    &#enquiry {@include flexNone;
+       fieldset {width:44%;margin:0 2% 2% 2%;
+         input {padding-left:0;padding-right:0;}
+         &.full {width:100%;clear:both; }
+       }
+       .select {
+         select {padding-right:1em;}
+         &:after {font-size:0px !important;visibility:hidden;}
+       }
+    }
+  }
+  
+  // Subscribe
+  form {
+    &.subscribe, &.contact {@include flexNone;text-justify:auto;
+       .form-wrap {max-width:35em;}
+       fieldset {width:44%;margin:0 2% 2% 2%;
+         input {padding-left:0;padding-right:0;}
+         &.full {width:100%;clear:both; }
+         input[type=submit] {width:94px;}
+         
+       }
+    }
+    &.contact {
+      fieldset {
+        textarea {text-align:left;width:86%;}
+        &.full {width:100%;clear:both;text-align:left;}
+        .fancy-submit {position:relative;left:50%;margin-left:-66px;}
+      }
+    }
+  }
+  
+
+  select {
+    option {color:#9b989b}
+  }
+  
+  // Two images
+  .two-images {
+    figure {width:43%;}
+  }
+  
+  // Location
+  .flip-container {overflow:hidden;display:block;height:380px;
+    .flipper .back {overflow:hidden;height:386px;}
+  }
+  
+  // About us
+  .archives-nav .timeline h5 {font-size:0.8em;}
+  
+  // Tabs
+  
+  .resp-tabs-list {text-justify:auto;}
+  
+  // Table
+  table td {width:auto;}
+  form fieldset {
+      &.checkbox {
+        input[type="checkbox"] {width:15px;height:15px;display:inline-block;}
+        label {margin:-8px 0 0 0;
+          &:before {visibility:hidden;display:none;}
+        }
+      }
+  }
+  
+  // Archive
+  
+  .page-template-tmpl-archive-php, .archive {
+      .tree .branch .projects img {max-width:100%;width:auto;opacity:1;}
+      .tree .col.left {width:43%;}
+      .tree .col.right {width:43%;}
+      .archive-chapter header{width:auto;
+        &.stuck {
+          position: static;
+        }
+
+        h2:after {margin-left:-14px;}
+      }
+      .tree .line.h b {width:50em;}
+      .tree .line.v b {height:150em;}
+      .archive-chapter .line.h b {max-width: 50em;}
+      .archive-chapter .line.v b {min-height: 150em;}
+      .tree .branch .projects.image .line.h {top:13.25em;}
+      .tree .branch .projects.image.flip .line.h {top:9em;}
+      .tree .branch .projects .columns {text-justify:auto;}
+      
+      // Hamburger
+      header .hamburger {background:url('../img/bitmaps/menu-dark.png') no-repeat top left;
+        span {display:none;}
+      }
+      .menu-open header .hamburger {background:url('../img/bitmaps/cross-dark.png') no-repeat top left;z-index:-2;
+        span {display:none;}
+      }
+      .archive-nav {margin-top:-66px;}
+
+  }
+  
+  // Foundation
+  .three-images.modal figure {
+    .md-trigger:hover figcaption {background:none;border:none;}
+    figcaption {display:none;}
+  }
+  .md-modal .md-content {width:740px;margin-top:0;margin-left:-367px;top:10%;}
+  .md-modal .md-content .md-close {background: #323232 url("../img/bitmaps/close.png") center center no-repeat;}
+  .md-overlay {background:transparent;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50323232,endColorstr=#50323232); zoom: 1;}
+}
+
+.no-svg {
+  .teasers .slider-arrows .slider-arrow {background:url("../img/bitmaps/arrow-side.png") no-repeat top left;}
+  .teasers .slider-arrows .slider-arrow.slider-arrow--right {background:url("../img/bitmaps/arrow-side-right.png") no-repeat top left;}
+  body.page-template-tmpl-archive-php header .logo, body.archive header .logo {background: transparent url("../img/bitmaps/sunland-lighter.png") no-repeat center top;}
+  .foundation-diagram .triangle {background:url("../img/bitmaps/prism.png") no-repeat top left;}
+}
+
+

@@ -1,0 +1,243 @@
+/* =============================================================================
+   property
+   ========================================================================== */
+
+// Map
+
+.gm-style .gm-style-iw {width:auto;padding:0;
+  h2.google-maps-title {@include didot;overflow: hidden !important;text-transform:uppercase;color:$headingColor;font-size:1em;letter-spacing:0.167em;line-height:1;padding-top:0;text-align:center;margin:0;}
+  p {display:none;}
+}
+
+.page-property {text-align:center;
+  p {margin:0;
+    &.intro {margin:1em 0 0;font-size:0.833em;
+      &:last-of-type {margin-top:0;}
+    }
+  }
+  .location-p {margin-bottom:8em;}
+  .slider {margin-bottom:3em;}
+  .read-more {position:static;@include translate(0, 0);}
+  .images p {margin-top:2em;}
+}
+
+.images {margin:0 0 8em;
+  .two-images {@include flexJustify;font-size:0px;
+    figure {display:inline-block;vertical-align:top;margin:0;width:47.875%;position:relative;border:18px solid #fff;
+      img {width:100%;height:auto;z-index:1;position:relative;}
+    }
+  }
+  .three-images {@include flexJustify;font-size:0px;
+    figure {display:inline-block;vertical-align:top;margin:0;width:30.5%;
+      img {width:100%;height:auto;}
+    }
+  }
+  .one-image {
+    figure {margin:0;width:100%;position:relative;border:18px solid #fff;
+      img {width:100%;height:auto;}
+    }
+  }
+  p {font-size:1.083em;text-align:center;margin-top:2em;}
+}
+
+
+  /* Flip Animation Styles */
+  /* entire container, keeps perspective */
+  .flip-container img {width:100%;height:auto;}
+  .flip-container {
+  	perspective         : 1000;
+  	-webkit-perspective : 1000;
+  	-moz-perspective    : 1000;
+  	-ms-perspective     : 1000;
+  }
+  .flip-container, .front, .back {
+  	height : 386px;
+  	width  : 100%;
+  }
+  /* flip speed goes here */
+  .flipper {
+  	position                : relative;
+
+  	transform-style         : preserve-3d;
+  	transition              : 0.6s;
+
+  	-webkit-transition      : 0.6s;
+  	-moz-transition         : 0.6s;
+  	-ms-transition          : 0.6s;
+  	-webkit-transform-style : preserve-3d;
+  	-moz-transform-style    : preserve-3d;
+  	-ms-transform-style     : preserve-3d;
+  }
+  /* hide back of pane during swap */
+  .front, .back {
+  	position                    : absolute;
+  	top                         : 0;
+  	left                        : 0;
+
+  	backface-visibility         : hidden;
+
+  	-webkit-backface-visibility : hidden;
+  	-moz-backface-visibility    : hidden;
+  	-ms-backface-visibility     : hidden;
+  }
+  /* front pane, placed above back */
+  .front { z-index: 2;   }
+  /* back, initially hidden pane */
+  .back {
+  	 transform         : rotateY(180deg);
+
+  	-webkit-transform : rotateY(180deg);
+  	-moz-transform    : rotateY(180deg);
+  	-ms-transform     : rotateY(180deg);
+  }
+
+  .flip-container.hover .flipper, .flip-container.hover .flipper {
+  	 transform         : rotateY(180deg);
+
+  	-webkit-transform : rotateY(180deg);
+  	-moz-transform    : rotateY(180deg);
+  	-ms-transform     : rotateY(180deg);
+  }
+
+  .flip-container.hover.googlemap-fix .flipper,
+  .flip-container.hover.googlemap-fix .back{
+  	transition:none;
+  	-moz-transition:none;
+  	-webkit-transition:none;
+
+  	transform         : rotateY(0);
+
+  	-webkit-transform : rotateY(0);
+  	-moz-transform    : rotateY(0);
+  	-ms-transform     : rotateY(0);
+  	z-index: 4;
+
+  }
+
+  .flip-container.hover.googlemap-alt .flipper,
+  .flip-container.hover.googlemap-alt .back{
+  	transition:none;
+  	-moz-transition:none;
+  	-webkit-transition:none;
+  	transform         : rotateY(180deg);
+
+  	-webkit-transform : rotateY(180deg);
+  	-moz-transform    : rotateY(180deg);
+  	-ms-transform     : rotateY(180deg);
+  }
+
+
+
+    p {margin:2em 0 4em 0;}
+    .map-icon {margin-bottom:2.8em;-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-touch-callout: none;}
+    #map {width:100%;height: 386px;}  
+    
+
+
+
+      
+.map-icon, .map-icon-brisbane, .map-icon-goldcoast, .map-icon-sydney, .map-icon-melbourne {width:100%;margin:1.5em 0 3em 0;cursor:pointer;-webkit-backface-visibility : hidden;
+    &:before {margin:0 auto;width:11px;display:block;font-family: FontAwesome;content:"\f041";font-size:1.5em;color:#9f895d;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+}
+
+
+
+
+.resources {
+  .links {text-align:center;
+      a {display:inline-block;vertical-align:middle;font-size:0.833em;text-transform:uppercase;letter-spacing:0.167em;text-decoration:none;color:#4d4645;margin:0 1em;
+        &:before {vertical-align:bottom;margin-right:6px;font-family: FontAwesome;content:"\f107";font-size:1.5em;line-height:1;color:#a08a5e;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+      }
+  }
+  img {margin:2em auto 1em auto;display:block;max-width:174px;}  
+}
+
+/* =============================================================================
+  Map flip fixes
+  ========================================================================== */
+
+// iPad
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+  .location {
+      .flipper {@include transitionNone;}
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  .flip-container {height:300px;
+      #map, .front, .back{height:300px;}
+  }
+}
+
+
+// iPad Retina
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .flip-container {height:386px;
+      #map, .front, .back {height:386px;}
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .flip-container {height:300px;
+      #map, .front, .back{height:300px;}
+  }
+  .contact-tabs {
+      .flip-container, .front, .back {height:386px;}
+  }
+}
+// iPad
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+  .contact-tabs {
+      .flip-container, .front, .back {height:386px;}
+  }
+}
+
+// iPhone 4
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) {
+  .flip-container {height:266px;
+      #map, .front, .back{height:266px;}
+  }
+  .contact-tabs {
+      .flip-container {height:386px;
+        .front, .back {height: 386px;}
+      }
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+  .contact-tabs {
+      .flip-container {height:416px;
+        .front, .back {height: 416px;}
+      }
+  }
+}
+// iPhone 5
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
+  .flip-container {height:266px;overflow:hidden;
+      #map, .front, .back{height:266px;}
+      .front img {width:auto;min-height:266px;height:auto;@include translate(-50%, 0%);}
+      .front {overflow:hidden;}
+  }
+  #main-menu, #news-filter {max-width:21.5em;}
+  .contact-tabs {
+      .flip-container {height:476px;
+        .front, .back {height: 476px;}
+      }
+  }
+}
+
+@media only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .contact-tabs {
+      .flip-container {height:516px;
+        .front, .back {height: 516px;}
+      }
+  }
+}
+
+
+  
+
