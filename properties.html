@@ -554,7 +554,43 @@
   </div>
 
   <!-- New Manager Modal -->
+
   <div id="manager-modal" class="modal-demo">
+  <button type="button" class="close" onclick="Custombox.close();">
+    <span>&times;</span><span class="sr-only">Close</span>
+  </button>
+  <h4 class="custom-modal-title">Assign Property Manager</h4>
+  <div class="custom-modal-text">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div>
+                          <button class="btn btn-custom"><span><i class="ti-plus m-r-15"></i></span>Add New Property Manager</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12 m-t-15 m-b-15 text-center">
+                          Or
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="col-sm-12 m-b-30">
+                      <select class="form-control">
+                          <option>Select from My Managers</option>
+                          <option>Bruce Banner</option>
+                          <option>Jean Grey</option>
+                          <option>Scott Lang</option>
+                          <option>Hank Pym</option>
+                      </select>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+              <button type="button" class="btn btn-default waves-effect waves-light m-l-5">Cancel</button>
+  </div>
+  </div>
+
+  <!-- <div id="manager-modal" class="modal-demo">
   <button type="button" class="close" onclick="Custombox.close();">
     <span>&times;</span><span class="sr-only">Close</span>
   </button>
@@ -597,7 +633,7 @@
               <button type="button" class="btn btn-default waves-effect waves-light m-l-5">Cancel</button>
           </form>
   </div>
-  </div>
+  </div> -->
 
   <script>
     var resizefunc = [];
